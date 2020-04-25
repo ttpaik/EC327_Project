@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gomoku</string>
+    <string name="button_start">START!</string>
+    <string name="button_new_game">NEW GAME</string>
+</resources>
