@@ -96,62 +96,6 @@ public class Gomoku extends Activity {
 
     }
 
-//    private boolean checkWinner() {
-//        if(winner_play!=0) return true;
-//        VectorEnd(xMove,0,0,1,xMove,yMove);
-//        return false;
-//    }
-//
-//    private void VectorEnd(int xx, int yy, int vx, int vy, int rx, int ry) {
-//        if (winner_play != 0) return;
-//        final int range = 4;
-//        int i, j;
-//        int xbelow = rx - range * vx;
-//        int ybelow = ry - range * vy;
-//        int xabove = rx + range * vx;
-//        int yabove = rx + range * vy;
-//        String st = "";
-//        i = xx;
-//        j = yy;
-//        while (!inside(i, xbelow, xabove) || !inside(j, ybelow, yabove)) {
-//            i += vx;
-//            j += vy;
-//        }
-//        while(true) {
-//            st = st + String.valueOf(valueCell[i][j]);
-//            if (st.length() == 5) {
-//                EvalEnd(st);
-//                st = st.substring(1, 5);
-//            }
-//            i+=vx;j+=vy;
-//            if(!inBoard(i,j) || !inside(i,xbelow,xabove) || !inside(j,xbelow,xabove) || winner_play!=0) {
-//                break;
-//            }
-//        }
-//    }
-//
-//    private boolean inBoard(int i, int j) {
-//        if (i < 0 || i > N - 1 || j < 0 || j > N - 1) return false;
-//        return true;
-//    }
-//
-//    private void EvalEnd(String st) {
-//        switch(st) {
-//            case "11111":
-//                winner_play = 1;
-//                break;
-//            case "22222":
-//                winner_play = 2;
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-//
-//    private boolean inside(int i, int xbelow, int xabove) {
-//        return (i - xbelow) * (i - xabove) <= 0;
-//    }
-//
     private boolean noEmptycell() {
         for (int i = 0; i<N ; i++) {
             for(int j = 0; j<N; j++) {
@@ -191,7 +135,7 @@ public class Gomoku extends Activity {
                 break;
             }
         }
-        if(consec>=5) {
+        if(consec==5) {
             winner_play=turnPlay;
             return true;
         }
@@ -222,7 +166,7 @@ public class Gomoku extends Activity {
                 break;
             }
         }
-        if(consec>=5) {
+        if(consec==5) {
             winner_play=turnPlay;
             return true;
         }
@@ -290,7 +234,7 @@ public class Gomoku extends Activity {
                 break;
             }
         }
-        if(consec>=5) {
+        if(consec==5) {
             winner_play=turnPlay;
             return true;
         }
